@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hate Speech Detection | {% block title %} Prediction{% endblock  %}</title>    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/nav5.css" rel="stylesheet">
+    <link href="../static/css/toxic.css" rel="stylesheet">
+    <link href="../static/css/predict.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+           <h4><a href="" class="logo"><span>Hate Speech </span>Detection</a></h4>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('upload')}}">Upload</a></li>
+                <li><a href="{{url_for('performance')}}">Performance Analysis</a></li>
+                <li><a href="{{url_for('chart')}}">Pie Chart</a></li>
+            </ul>
+            <div class="phone-button">
+                <i class="fa fa-bars open" aria-hidden="true"></i>
+                <i class="fa fa-close close" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="formbold-main-wrapper">
+
+    <div class="formbold-form-wrapper">
+      <div class="formbold-form-title">
+          <h3>Enter the comment/text to identify</h3>
+          <p>No one is born hating another person because of the colour of his skin, or his background, or his religion. People must learn to hate, and if they can learn to hate, they can be taught to love, for love comes more naturally to the human heart than its opposite.
+        </p>
+      </div>
+      <form action="{{ url_for('predict')}}"method="post">
+        <textarea  id='text' type="text" name="text" placeholder="Enter meassage or comment" required="required"  rows="5" cols="30"  class="formbold-form-input"></textarea>
+
+
+          <button id='button' type="submit" class="btn btn-info  btn-lg btn-primary" class="formbold-btn">
+              Predict
+          </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row op">
+    <h2 class="hide">Given input Classification and Prediction</h2>
+    <h4>{{ pred_tox }} <br><br>
+        {{ pred_sev }} <br><br>
+        {{ pred_obs }} <br><br>
+        {{ pred_thr }} <br><br>
+        {{ pred_ins }} <br><br>
+        {{ pred_ide }}</h4>
+</div>
+
+
+</body>
+
+</html>

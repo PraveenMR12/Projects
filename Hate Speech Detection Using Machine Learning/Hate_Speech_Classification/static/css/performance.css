@@ -1,0 +1,17 @@
+.main{
+    padding-top: 10%;
+    margin-bottom: -10%;
+}
+.table{
+    margin-top: 20px;
+    margin-left: 33%;
+    font-size: 25px;
+    line-height: 50px;
+}
+.center{
+    text-align: center;
+}
+.head{
+    color:  #5260b9;
+    margin-bottom: 10px;
+}

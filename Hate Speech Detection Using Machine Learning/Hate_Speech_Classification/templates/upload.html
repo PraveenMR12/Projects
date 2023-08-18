@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hate Speech Detection | {% block title %} Upload{% endblock  %}</title>    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/front_nav.css" rel="stylesheet">
+    <link href="../static/css/upload.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#b11855;">
+    <nav>
+        <div class="container nav-container">
+           <h4><a href="" class="logo"><span>Hate Speech </span>Detection</a></h4>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="#Services">About</a></li>
+                <li><a href="{{url_for('login')}}" class="btn btn-primary">Log Out</a></li>
+            </ul>
+            <div class="phone-button">
+                <i class="fa fa-bars open" aria-hidden="true"></i>
+                <i class="fa fa-close close" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="details">
+        <h1 class="head">Select csv dataset file</h1>
+        <p class="info">This is a critical step that will cascade in how good the model will be, the more and better data that we get, the better our model will perform.
+            There are several techniques to collect the data, like web scraping, manual interventions. The dataset is referred from the popular dataset repository called kaggle.
+            </p>
+        <form action="http://localhost:5000/preview" name="fs" id="fs" method="post" enctype=multipart/form-data>
+
+            <div class="choose">
+                <input  type="file" name="datasetfile" id="file1" required>
+                <input type="submit" class="btn btn-primary upload"  value="Upload">
+            </div>
+
+        </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

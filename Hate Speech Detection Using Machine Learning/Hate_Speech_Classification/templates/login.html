@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hate Speech Detection | {% block title %} Login{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon" />
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/front_nav.css" rel="stylesheet" />
+    <link href="../static/css/login.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="container nav-container">
+        <h4>
+          <a href="" class="logo"><span>Hate Speech </span>Detection</a>
+        </h4>
+        <ul>
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="#Services">About</a></li>
+        </ul>
+        <div class="phone-button">
+          <i class="fa fa-bars open" aria-hidden="true"></i>
+          <i class="fa fa-close close" aria-hidden="true"></i>
+        </div>
+      </div>
+    </nav>
+    <!-- ................END NAV BAR ............ -->
+
+    <div class="wrapper center">
+      <div class="title">Login Here</div>
+      <form action="" method="post">
+        <p class="white">Static Login Page</p>
+
+        <div class="area">
+          <input
+            input
+            type="text"
+            id="uname"
+            name="uname"
+            placeholder="Username"
+            class="form-control" />
+        </div>
+        <div class="area">
+          <input
+            type="password"
+            id="pwd"
+            name="pwd"
+            placeholder="Password"
+            class="form-control" />
+        </div>
+        <br />
+        <div class="checkbox">
+          <input type="checkbox" id="remember-me" />
+          <label class="white" for="remember-me">Remember me</label>
+        </div>
+        <div class="area">
+          <input
+            class="submit"
+            type="button"
+            class="btn btn-success"
+            value="Login"
+            onclick="login()" />
+        </div>
+      </form>
+    </div>
+    <script>
+      addEventListener(
+        "load",
+        function () {
+          setTimeout(hideURLbar, 0);
+        },
+        false
+      );
+
+      function hideURLbar() {
+        window.scrollTo(0, 1);
+      }
+
+      function login() {
+        var uname = document.getElementById("uname").value;
+        var pwd = document.getElementById("pwd").value;
+
+        if (uname == "admin" && pwd == "admin") {
+          alert("Login Success!");
+
+          window.location = "{{url_for('upload')}}";
+          return false;
+        } else {
+          alert("Invalid Credentials!");
+        }
+      }
+    </script>
+  </body>
+</html>

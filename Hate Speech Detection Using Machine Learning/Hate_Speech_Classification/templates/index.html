@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hate Speech Detection | {% block title %} Home{% endblock  %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/front_nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+           <h4><a href="" class="logo"><span>Hate Speech </span>Detection</a></h4>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="#Services">About</a></li>
+                <li><a href="{{url_for('login')}}" class="btn btn-primary">Login</a></li>
+            </ul>
+            <div class="phone-button">
+                <i class="fa fa-bars open" aria-hidden="true"></i>
+                <i class="fa fa-close close" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- ................END NAV BAR ............ -->
+
+
+    <!-- ................START HEADER SECTION ............ -->
+    <header id="Home">
+        <div class="container header-container">
+            <div class="header-left">
+                <h3>Hate Speech</h3>
+                <h1>Detection<span> using Machine Learning</span></h1>
+                <p class="text-light">Detecting Hate Speech with Machine learning, We looked into and analysed a number of research publications on this topic. Different machine learning models have different strengths that make some better than others for certain tasks. Some models are more accurate while others are more efficient. It is important to use different models and compare their performance in order to find the best one for hate speech detection.</p>
+                <div class="button-aria">
+                    <a href="" download="" class="btn btn-primary">Report</a>
+                    <a href=""  class="btn ">Presentation</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../static/img/home.png" alt="" width="100%" height="100%">
+            </div>
+        </div>
+    </header>
+    <!-- ................END HEADER SECTION ............ -->
+
+
+</body>
+
+</html>

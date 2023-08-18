@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hate Speech Detection | {% block title %} Preview{% endblock  %}</title>    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/preview.css" rel="stylesheet">
+    <link href="../static/css/nav.css" rel="stylesheet">
+    <link href="css/freelancer.min.css" rel="stylesheet">
+    <style>
+   #loading {
+   background: url('../static/ajax-loader.gif') no-repeat center center;
+   position: absolute;
+   top: 0;
+   left: 59;
+   height: 100%;
+   width: 86%;
+   z-index: 9999999;
+}
+   </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav>
+        <div class="container nav-container">
+           <h4><a href="" class="logo"><span>Hate Speech </span>Detection</a></h4>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('upload')}}">Upload</a></li>
+                <li><a href="{{url_for('index')}}" class="btn btn-primary">Log Out</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5 ">
+        <div class="container project">
+            <div class="text-center mx-auto wow" style="max-width: 500px;">
+                <p class="display-5 mb-5">Dataset Preview</p>
+
+            </div>
+            <pre class="info">The dataset consists of 159572 individual data. There are 8 columns in the dataset, which are described below.
+                Id:  Id number
+                comment_text: comment text
+                toxic: 0 or 1
+                severe_toxic: 0 or 1
+                obscene: 0 or 1
+                threat: 0 or 1
+                insult: 0 or 1
+                identity_hate: 0 or 1
+                </pre>
+
+            <div class="form-group" style="padding:0px 250px 10px 40px;height:200px;">
+                <input style="margin-left:350px" type="button" onclick="hideLoader()" class="btn btn-primary" value="Click to Train"  />
+                <div id="loading" style="display:None;margin-top:552950px"></div>
+                </div>
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+     <br>
+	 <br>
+      <!-- Contact Section Heading -->
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Contact Section Form -->
+
+
+  </section>
+
+
+
+<script type='text/javascript'>
+function hideLoader() {
+$('#loading').show(0).delay(10000).hide(0,function(){
+     alert("Training finished!");
+	 window.location = "{{url_for('toxic')}}";
+   });
+}
+</script>
+</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="col-8 mx-auto overflow-auto">
+
+        {{ df_view.to_html(classes="table striped",na_rep="-") | safe}}
+            </div>
+          </div>
+      </div>
+    <!-- Projects End -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/lib/wow/wow.min.js"></script>
+    <script src="../static/lib/easing/easing.min.js"></script>
+    <script src="../static/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/../static/lib/counterup/counterup.min.js"></script>
+    <script src="../static/lib/parallax/parallax.min.js"></script>
+    <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>

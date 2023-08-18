@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hate Speech Detection | {% block title %} Chart{% endblock  %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/css/nav5.css" rel="stylesheet">
+    <link href="../static/css/performance.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-container">
+           <h4><a href="" class="logo"><span>Hate Speech </span>Detection</a></h4>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('upload')}}">Upload</a></li>
+                <li><a href="{{url_for('toxic')}}">Prediction</a></li>
+                <li><a href="{{url_for('performance')}}">Performance Analysis</a></li>
+                <li><a href="{{url_for('login')}}" class="btn btn-primary">Log Out</a></li>
+            </ul>
+            <div class="phone-button">
+                <i class="fa fa-bars open" aria-hidden="true"></i>
+                <i class="fa fa-close close" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="center">
+            <h3 class="head">Random Forest Algorithm F1-score</h3>
+        <p class="info">Random Forest is a popular machine learning algorithm used for both classification and regression tasks. It belongs to the ensemble learning family of algorithms, which combines multiple decision trees to improve the overall performance of the model.
+            </p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['class', 'percentage'],
+          ['toxic',     15],
+
+          ['severe_toxic',    35 ],
+		   ['obscene',     35],
+
+          ['insult',    15 ],
+		 ['threat',    35 ],
+		   ['identity_hate',     35]
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+     <div  style="margin-left:250px;margin-top:10%;"><div id="piechart_3d" style="width: 900px; height: 500px; "></div></div>
+
+
+</body>
+
+</html>
